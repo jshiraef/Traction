@@ -12,12 +12,10 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
 		if (Input.GetKey("up"))
-		    {
+		{
 			transform.Translate (0, 0, (Time.deltaTime * speed));
-			}
-
+		}
 		if (Input.GetKey("down"))
 		{
 			transform.Translate (0, 0, (-Time.deltaTime * speed));
