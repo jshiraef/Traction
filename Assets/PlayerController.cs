@@ -5,11 +5,12 @@ public class PlayerController : MonoBehaviour {
 
 	public float speed;
 	public float jumpSpeed;
-	public Vector3 gravity = Vector3.down * 0.1f;
 	public Vector3 velocity = Vector3.zero;
 
-	private bool isJumping;
+	public const float GRAVITY_STRENGTH = 0.5f;
+
 	float jumpCooldown;
+	float jumpTweaker = .0025f;
 
 	CharacterController controller;
 
@@ -44,26 +45,24 @@ public class PlayerController : MonoBehaviour {
 		// Jumping code
 		if (controller.isGrounded) {
 			if (Input.GetKey ("space")) {
-				isJumping = true;
-				jumpCooldown = 100;
+				jumpCooldown = 150;
 			}
 			velocity.y = 0;
 		} 
 
-		if(isJumping && jumpCooldown > 0)
+		if(jumpCooldown > 0)
 		{
-			controller.Move (Vector3.up * (Time.deltaTime * 20f));
+			controller.Move (Vector3.up * (jumpTweaker * jumpCooldown));
 			jumpCooldown -= Time.deltaTime * 300f;
 			velocity.y = 0;
 		}
 		
 		if(jumpCooldown < 0)
 		{
-			isJumping = false;
-		}
+			jumpCooldown = 0;
+		}	
 
-
-		velocity += gravity * Time.deltaTime;
+		velocity.y -= GRAVITY_STRENGTH * Time.deltaTime;
 
 		controller.Move(velocity) ;
 		
