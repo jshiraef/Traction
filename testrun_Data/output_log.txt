@@ -12,7 +12,7 @@ Platform assembly: C:\Users\Joseph\Documents\Projects\UnityExample\testrun_Data\
 Loading C:\Users\Joseph\Documents\Projects\UnityExample\testrun_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Users\Joseph\Documents\Projects\UnityExample\testrun_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Users\Joseph\Documents\Projects\UnityExample\testrun_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.095 seconds
+- Completed reload, in  0.201 seconds
 desktop: 1920x1080 59Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 XInput1_3.dll not found.
