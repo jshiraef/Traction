@@ -3,9 +3,8 @@ using System.Collections;
 
 public class CameraObject : MonoBehaviour {
 
-	private Vector3 movement;
-	private Vector3 position;
-	private Vector3 distanceFromPlayer = new Vector3(0, 0, 0);
+	private static Vector3 DISTANCE_FROM_PLAYER =
+		new Vector3(8.5f, 4.43f, -11.73f);
 
 
 	// Use this for initialization
@@ -35,7 +34,12 @@ public class CameraObject : MonoBehaviour {
 		GameObject player = GameObject.Find("Player");
 		
 		if (Camera.current != null) {
-			Camera.current.transform.position = player.transform.position;
+			Vector3 playerPos = player.transform.position;
+			Vector3 newCameraPos = new Vector3(playerPos.x, playerPos.y, playerPos.z);
+			newCameraPos.x += DISTANCE_FROM_PLAYER.x;
+			newCameraPos.y += DISTANCE_FROM_PLAYER.y;
+			newCameraPos.z += DISTANCE_FROM_PLAYER.z;
+			Camera.current.transform.position = newCameraPos;
 		}
 	}
 
