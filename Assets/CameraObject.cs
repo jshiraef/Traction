@@ -4,7 +4,7 @@ using System.Collections;
 public class CameraObject : MonoBehaviour {
 
 	private static Vector3 DISTANCE_FROM_PLAYER =
-		new Vector3(0.5f, 0.25f, 0.5f);
+		new Vector3(0.4f, 0.3f, 0.5f);
 
 	SphereCollider sphere;
 
@@ -19,6 +19,7 @@ public class CameraObject : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		 //ControlCameraWithInputAxes ();
+		//ControlOffsetWithInputAxes ();
 
 		MoveCameraToPlayerLocation ();
 	}
@@ -29,6 +30,17 @@ public class CameraObject : MonoBehaviour {
 		if (Camera.current != null) {
 			Camera.current.transform.Translate (new Vector3 (xAxisValue, yAxisValue, 0f));
 		}
+	}
+
+	void ControlOffsetWithInputAxes() {
+		float xAxisValue = Input.GetAxis ("Horizontal");
+		float yAxisValue = Input.GetAxis ("Vertical");
+		DISTANCE_FROM_PLAYER.x += xAxisValue/100;
+		DISTANCE_FROM_PLAYER.y += yAxisValue/100;
+		Debug.Log (DISTANCE_FROM_PLAYER);
+//		if (Camera.current != null) {
+//			Camera.current.transform.Translate (new Vector3 (xAxisValue, yAxisValue, 0f));
+//		}
 	}
 
 	void MoveCameraToPlayerLocation() {
