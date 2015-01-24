@@ -6,14 +6,9 @@ public class CameraObject : MonoBehaviour {
 	private static Vector3 DISTANCE_FROM_PLAYER =
 		new Vector3(0.4f, 0.3f, 0.5f);
 
-	SphereCollider sphere;
-
 	// Use this for initialization
 	void Start () {
 
-		sphere = gameObject.GetComponent<SphereCollider>();
-		
-		sphere.enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -50,7 +45,6 @@ public class CameraObject : MonoBehaviour {
 		GameObject player = GameObject.Find("Player");
 
 		if (Camera.current != null) {
-			Debug.Log ("this should be happening");
 			Vector3 playerPos = player.transform.position;
 			Vector3 newCameraPos = new Vector3(playerPos.x, playerPos.y, playerPos.z);
 			newCameraPos.x += DISTANCE_FROM_PLAYER.x;
