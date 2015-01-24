@@ -244,6 +244,7 @@ GameObject:
   - 33: {fileID: 1004924318}
   - 65: {fileID: 1004924317}
   - 23: {fileID: 1004924316}
+  - 54: {fileID: 1004924320}
   m_Layer: 0
   m_Name: House
   m_TagString: Untagged
@@ -302,6 +303,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!54 &1004924320
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1004924315}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1832025711
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,6 +330,7 @@ GameObject:
   - 65: {fileID: 1832025713}
   - 23: {fileID: 1832025712}
   - 114: {fileID: 1832025716}
+  - 54: {fileID: 1832025717}
   m_Layer: 0
   m_Name: Stump
   m_TagString: Untagged
@@ -383,6 +400,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21d3e8136e6ccc844b7cf1b4b64f3d65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &1832025717
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1832025711}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2108317072
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,6 +496,7 @@ GameObject:
   - 65: {fileID: 2141055479}
   - 23: {fileID: 2141055478}
   - 114: {fileID: 2141055482}
+  - 54: {fileID: 2141055483}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -534,3 +567,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+--- !u!54 &2141055483
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2141055477}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
