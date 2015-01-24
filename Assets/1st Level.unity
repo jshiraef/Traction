@@ -424,8 +424,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 2108317076}
   - 33: {fileID: 2108317075}
-  - 23: {fileID: 2108317073}
   - 65: {fileID: 2108317074}
+  - 23: {fileID: 2108317073}
+  - 154: {fileID: 2108317077}
   m_Layer: 0
   m_Name: Ground Floor
   m_TagString: Untagged
@@ -484,6 +485,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!154 &2108317077
+TerrainCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2108317072}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_TerrainData: {fileID: 0}
+  m_CreateTreeColliders: 1
 --- !u!1 &2141055477
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,6 +504,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2141055481}
   - 33: {fileID: 2141055480}
+  - 65: {fileID: 2141055479}
   - 23: {fileID: 2141055478}
   - 114: {fileID: 2141055482}
   - 143: {fileID: 2141055483}
@@ -523,6 +535,18 @@ Renderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!65 &2141055479
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2141055477}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &2141055480
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -553,7 +577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cc56d2b6942c6348bd9f924af03e76e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 10
   jumpSpeed: 0
   gravity: {x: 0, y: -1, z: 0}
   velocity: {x: 0, y: 0, z: 0}
