@@ -5,6 +5,7 @@ public class CameraObject : MonoBehaviour {
 
 	private Vector3 movement;
 	private Vector3 position;
+	private Vector3 distanceFromPlayer = new Vector3(0, 0, 0);
 
 
 	// Use this for initialization
@@ -14,9 +15,9 @@ public class CameraObject : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		ControlCameraWithInputAxes ();
+		// ControlCameraWithInputAxes ();
 
-		//MoveCameraToPlayerLocation ();
+		MoveCameraToPlayerLocation ();
 	}
 
 	void ControlCameraWithInputAxes() {
