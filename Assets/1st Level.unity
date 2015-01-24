@@ -426,6 +426,7 @@ GameObject:
   - 33: {fileID: 2108317075}
   - 65: {fileID: 2108317074}
   - 23: {fileID: 2108317073}
+  - 154: {fileID: 2108317077}
   m_Layer: 0
   m_Name: Ground Floor
   m_TagString: Untagged
@@ -484,6 +485,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!154 &2108317077
+TerrainCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2108317072}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_TerrainData: {fileID: 0}
+  m_CreateTreeColliders: 1
 --- !u!1 &2141055477
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,7 +561,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2141055477}
   m_LocalRotation: {x: 0, y: .036576014, z: 0, w: .999330878}
-  m_LocalPosition: {x: 5.78999996, y: -1.28999996, z: .550000012}
+  m_LocalPosition: {x: 5.78999996, y: .239999995, z: .550000012}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
