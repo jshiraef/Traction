@@ -810,6 +810,7 @@ GameObject:
   - 23: {fileID: 2141055478}
   - 114: {fileID: 2141055482}
   - 143: {fileID: 2141055483}
+  - 114: {fileID: 2141055484}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -879,8 +880,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cc56d2b6942c6348bd9f924af03e76e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  jumpSpeed: 0
+  gravity: 20
+  walkSpeed: 8
+  runSpeed: 12
+  acceleration: 30
+  jumpHeight: 12
   velocity: {x: 0, y: 0, z: 0}
   currentSpeed: 0
   targetSpeed: 0
@@ -898,3 +902,19 @@ CharacterController:
   m_SkinWidth: .0799999982
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2141055484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2141055477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2742220339d6bb47b233684636b8360, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 0
+  grounded: 0
+  movementStopped: 0

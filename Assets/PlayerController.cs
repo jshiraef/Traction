@@ -4,8 +4,12 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
 
 	// player handling
-	public float speed;
-	public float jumpSpeed;
+	public float gravity = 20;
+	public float walkSpeed = 8;
+	public float runSpeed = 12;
+	public float acceleration = 30;
+	public float jumpHeight = 12;
+
 	public Vector3 velocity = Vector3.zero;
 
 	public const float GRAVITY_STRENGTH = 0.5f;
@@ -19,16 +23,48 @@ public class PlayerController : MonoBehaviour {
 	public float targetSpeed;
 	private Vector2 amountToMove;
 
-	//PlayerPhysics playerPhysics
+	PlayerPhysics playerPhysics;
 	
 
 	// Use this for initialization
 	void Start () {
+		playerPhysics = GetComponent<PlayerPhysics>();
 		controller = GetComponent<CharacterController> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+		// testing new movement
+		float speed = (Input.GetKey(KeyCode.B) ? runSpeed: walkSpeed);
+		targetSpeed = Input.GetAxisRaw ("Horizontal") * speed;
+		currentSpeed = IncrementTowards(currentSpeed, targetSpeed, acceleration);
+
+		if(playerPhysics.movementStopped)	
+		{
+			targetSpeed = 0;
+			currentSpeed = 0;
+		}
+		
+		if(playerPhysics.grounded)
+		{
+			amountToMove.y = 0;
+			
+			// Jump
+			if(Input.GetKey (KeyCode.V)) // second jump
+			{
+			amountToMove.y = jumpHeight;
+			}
+		}
+
+		amountToMove.x = currentSpeed;
+		amountToMove.y -= gravity * Time.deltaTime;
+		
+		playerPhysics.move (amountToMove * Time.deltaTime);
+		
+		float moveDirection = Input.GetAxisRaw ("Horizontal");
+		
+		transform.eulerAngles = (moveDirection > 0) ? Vector3.up * 180: Vector3.zero;
 		
 		if (Input.GetKey("up"))
 		{
@@ -76,5 +112,22 @@ public class PlayerController : MonoBehaviour {
 		
 	}
 
-
+	// increment n towards target by speed
+	private float IncrementTowards(float n, float target, float a) 
+	{
+		if(n == target)
+		{
+			return n;
+		}
+		
+		else {
+			float direction = Mathf.Sign(target - n); // must n be increased or decreased to get closer to target
+			n += a * Time.deltaTime * direction;
+			return( direction == Mathf.Sign(target - n)) ? n: target; // if n has now passed target then return target, otherwise return n
+		}
+	}
 }
+
+
+	
+	
