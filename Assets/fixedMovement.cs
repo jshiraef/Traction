@@ -9,8 +9,6 @@ public class fixedMovement : MonoBehaviour {
 		
 	// Use this for initialization
 	void Start () {
-		Vector3 spot = this.gameObject.transform.position;
-	 startPosition = new Vector3(spot.x, spot.y, spot.z);
 	}
 	
 	// Update is called once per frame

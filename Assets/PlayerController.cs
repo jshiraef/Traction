@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(PlayerPhysics))]
 public class PlayerController : MonoBehaviour {
 
 	// player handling
@@ -37,7 +38,7 @@ public class PlayerController : MonoBehaviour {
 
 		// testing new movement
 		float speed = (Input.GetKey(KeyCode.B) ? runSpeed: walkSpeed);
-		targetSpeed = Input.GetAxisRaw ("Horizontal") * speed;
+		targetSpeed = Input.GetAxisRaw ("Horizontal") * -speed;
 		currentSpeed = IncrementTowards(currentSpeed, targetSpeed, acceleration);
 
 		if(playerPhysics.movementStopped)	
@@ -74,41 +75,41 @@ public class PlayerController : MonoBehaviour {
 		{
 			transform.Translate (0, 0, (Time.deltaTime * speed));
 		}
-		
-		if (Input.GetKey("left"))
-		{
-			transform.Translate ((Time.deltaTime * speed), 0, 0);
-		}
-		
-		if (Input.GetKey("right"))
-		{
-			transform.Translate ((-Time.deltaTime * speed), 0, 0);
-		}
+//		
+//		if (Input.GetKey("left"))
+//		{
+//			transform.Translate ((Time.deltaTime * speed), 0, 0);
+//		}
+//		
+//		if (Input.GetKey("right"))
+//		{
+//			transform.Translate ((-Time.deltaTime * speed), 0, 0);
+//		}
 
 
-		// Jumping code
-		if (controller.isGrounded) {
-			if (Input.GetKey ("space")) {
-				jumpCooldown = 150;
-			}
-			velocity.y = 0;
-		} 
-
-		if(jumpCooldown > 0)
-		{
-			controller.Move (Vector3.up * (jumpTweaker * jumpCooldown));
-			jumpCooldown -= Time.deltaTime * 300f;
-			velocity.y = 0;
-		}
-		
-		if(jumpCooldown < 0)
-		{
-			jumpCooldown = 0;
-		}	
-
-		velocity.y -= GRAVITY_STRENGTH * Time.deltaTime;
-
-		controller.Move(velocity) ;
+//		// Jumping code
+//		if (controller.isGrounded) {
+//			if (Input.GetKey ("space")) {
+//				jumpCooldown = 150;
+//			}
+//			velocity.y = 0;
+//		} 
+//
+//		if(jumpCooldown > 0)
+//		{
+//			controller.Move (Vector3.up * (jumpTweaker * jumpCooldown));
+//			jumpCooldown -= Time.deltaTime * 300f;
+//			velocity.y = 0;
+//		}
+//		
+//		if(jumpCooldown < 0)
+//		{
+//			jumpCooldown = 0;
+//		}	
+//
+//		velocity.y -= GRAVITY_STRENGTH * Time.deltaTime;
+//
+//		controller.Move(velocity) ;
 		
 	}
 

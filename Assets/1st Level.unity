@@ -74,6 +74,87 @@ NavMeshSettings:
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
   m_NavMesh: {fileID: 0}
+--- !u!1 &41345444
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 41345449}
+  - 33: {fileID: 41345448}
+  - 65: {fileID: 41345447}
+  - 23: {fileID: 41345446}
+  - 114: {fileID: 41345445}
+  m_Layer: 8
+  m_Name: moving platform2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &41345445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 41345444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c9546a41b4fed645bff9dff4dfabc85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!23 &41345446
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 41345444}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!65 &41345447
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 41345444}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &41345448
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 41345444}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &41345449
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 41345444}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.79999995, y: 4.76999998, z: 1.61000001}
+  m_LocalScale: {x: 7, y: 1, z: 6}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
 --- !u!1 &446503302
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,7 +477,7 @@ GameObject:
   - 65: {fileID: 768801651}
   - 23: {fileID: 768801650}
   - 114: {fileID: 768801654}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: moving platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -449,7 +530,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 768801649}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.5, y: 3.29999995, z: -.899999976}
+  m_LocalPosition: {x: 14.5, y: .819999993, z: -.899999976}
   m_LocalScale: {x: 7, y: 1, z: 6}
   m_Children: []
   m_Father: {fileID: 0}
@@ -476,8 +557,7 @@ GameObject:
   - 33: {fileID: 1004924318}
   - 65: {fileID: 1004924317}
   - 23: {fileID: 1004924316}
-  - 54: {fileID: 1004924320}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: House
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -531,25 +611,10 @@ Transform:
   m_GameObject: {fileID: 1004924315}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -.600000024, y: -.699999988, z: -.899999976}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
---- !u!54 &1004924320
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1004924315}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1289887569
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,7 +794,7 @@ GameObject:
   - 65: {fileID: 2108317074}
   - 23: {fileID: 2108317073}
   - 154: {fileID: 2108317077}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -915,6 +980,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   grounded: 0
   movementStopped: 0
