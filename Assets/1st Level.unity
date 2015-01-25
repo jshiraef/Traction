@@ -562,7 +562,7 @@ GameObject:
   - 136: {fileID: 1289887571}
   - 23: {fileID: 1289887570}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: floating Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -882,6 +882,8 @@ MonoBehaviour:
   speed: 10
   jumpSpeed: 0
   velocity: {x: 0, y: 0, z: 0}
+  currentSpeed: 0
+  targetSpeed: 0
 --- !u!143 &2141055483
 CharacterController:
   m_ObjectHideFlags: 0

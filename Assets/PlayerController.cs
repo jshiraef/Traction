@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
+	// player handling
 	public float speed;
 	public float jumpSpeed;
 	public Vector3 velocity = Vector3.zero;
@@ -13,6 +14,13 @@ public class PlayerController : MonoBehaviour {
 	float jumpTweaker = .0025f;
 
 	CharacterController controller;
+
+	public float currentSpeed;
+	public float targetSpeed;
+	private Vector2 amountToMove;
+
+	//PlayerPhysics playerPhysics
+	
 
 	// Use this for initialization
 	void Start () {
